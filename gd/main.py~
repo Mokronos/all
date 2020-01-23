@@ -1,0 +1,33 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+rate = 0.1
+steps = 50
+start_x = 0.5
+def f(x):
+    return np.sin(x)+ np.cos(2*x)
+
+def df(x):
+    return np.cos(x) - 2* np.sin(2*x) 
+
+def minimum():
+    next_x = start_x
+    for i in range(steps):
+        old_x = next_x
+        next_x = old_x - rate*df(old_x)
+        if i==0:
+            plt.plot([old_x,next_x],[f(old_x),f(next_x)], 'ro-', label='Steps')
+        else:
+            plt.plot([old_x,next_x],[f(old_x),f(next_x)], 'ro-')
+    print(next_x,f(next_x))
+minimum()
+
+k = np.arange(-5,5,0.01)
+plt.grid(True)
+
+plt.xlabel('x')
+plt.ylabel('y')
+plt.plot(k,f(k), label = "f(x)")
+plt.plot(start_x,f(start_x),'D', label = "Start")
+plt.legend(loc = "best")
+plt.show()

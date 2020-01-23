@@ -1,0 +1,29 @@
+import math
+import numpy as np
+
+
+data = [0,1,1,0,1]
+
+
+input_dim = 6
+output_dim = 9
+hidden_dim = 4
+input = np.zeros((input_dim,1))
+weights1 = np.zeros((input_dim,hidden_dim))
+hidden = np.zeros((hidden_dim,1))
+weights2 = np.zeros((hidden_dim,output_dim))
+output = np.zeros((output_dim,1))
+
+
+#print("input: \n", input)
+#print("weights1: \n", weights1)
+#print("hidden: \n", hidden)
+#print("weights2: \n", weights2)
+#print("output: \n", output)
+
+y = np.array([[1,2],[3,4]])
+x = np.array([[1],[2]])
+z = np.matmul(x,y)
+print(x)
+print(y)
+print(z)

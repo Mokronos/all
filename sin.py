@@ -1,0 +1,22 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import math
+
+x = np.arange(0,math.pi * 6,0.01)
+f1 = 20
+f2 = 23
+d = abs(f1-f2)
+y1 = np.sin(f1*x)
+y2 = np.sin(f2*x)
+y3 = np.sin(x*f1) + np.sin(f2*x)
+y4 = 2*np.cos(x * d)
+
+plt.subplot(3,1,1)
+plt.plot(x,y1,'k')
+plt.subplot(3,1,2)
+plt.plot(x,y2,'k')
+plt.subplot(3,1,3)
+plt.plot(x,y3,'k')
+plt.plot(x,y4,'--r')
+plt.show()
+

@@ -1,0 +1,10 @@
+import matplotlib.pyplot as plt
+import math
+import numpy as np
+
+x = np.arange(0,4*math.pi,0.01)
+
+y = np.sin(x*20)
+
+plt.plot(x,y,'r')
+plt.show()
