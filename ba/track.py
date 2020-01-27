@@ -14,7 +14,7 @@ args = vars(ap.parse_args())
 
 
 
-tracker = cv2.TrackerKCF_create()
+tracker = cv2.TrackerMOSSE_create()
 initBB = None
 
 vs = cv2.VideoCapture(args["video"])

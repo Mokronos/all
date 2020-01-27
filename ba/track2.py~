@@ -54,9 +54,11 @@ while True:
         f-=50
     if k ==27:
         sys.exit()
+    if 0 <= f <fc:
+        
+        cv.imshow("track",mem[f])
     
-    cv.imshow("track",mem[f])
-    
+        
 
 
 
