@@ -9,7 +9,7 @@ ap.add_argument("-v", "--video", type=str,
         help="path to input video file")
 args = vars(ap.parse_args())
 
-
+out = cv.VideoWriter('trackresult.mp4', -1, 30, (1920,1080))
 tracker = cv.TrackerCSRT_create()
 
 v = cv.VideoCapture(args["video"])
@@ -34,13 +34,14 @@ while f<fc:
         cv.putText(frame, "Tracking failed", (100,80), cv.FONT_HERSHEY_SIMPLEX, 0.75,(0,0,255),2)
     
     cv.putText(frame, "frame: " + str(int(f)), (100,50), cv.FONT_HERSHEY_SIMPLEX, 0.75, (50,170,50), 2)
-
+    out.write(frame)
     mem.append(frame)
     f+=1
 
 f = 0
 cv.imshow("track",mem[f])
 
+out.release()
 while True:
     
     k = cv.waitKey(0)
